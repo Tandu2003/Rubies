@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
@@ -16,13 +16,11 @@ const AppRoutes = () => {
   ];
 
   return (
-    <Router>
-      <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} {...route} />
-        ))}
-      </Routes>
-    </Router>
+    <Routes>
+      {routes.map((route, index) => (
+        <Route key={index} {...route} />
+      ))}
+    </Routes>
   );
 };
 
