@@ -1,0 +1,173 @@
+.item-product {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .product-image {
+    position: relative;
+
+    .product-link {
+      display: flex;
+
+      .product-img {
+        width: 100%;
+      }
+    }
+
+    .product-rank {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: auto;
+      height: 33px;
+      line-height: 33px;
+      color: #040303;
+      text-align: center;
+      text-transform: none;
+      box-sizing: content-box;
+
+      .rank-icon {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 3px solid #040303;
+        animation: pulsate 1s ease-out;
+        animation-iteration-count: infinite;
+        opacity: 0;
+      }
+
+      .rank-number {
+        color: #fff;
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 50%;
+        background-color: #040303;
+      }
+    }
+
+    .product-actions {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      transition: background 0.3s ease;
+      opacity: 0;
+      -webkit-transition: all ease 0.3s;
+      -moz-transition: all ease 0.3s;
+      -ms-transition: all ease 0.3s;
+      -o-transition: all ease 0.3s;
+      transition: all ease 0.3s;
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.7);
+
+      .action-buttons {
+        display: none;
+
+        .btn-action {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #000;
+            border-radius: 50%;
+          }
+
+          img {
+            width: 20px;
+            height: 20px;
+
+            &.img_option {
+              padding: 0px;
+              margin-bottom: 3px;
+              filter: brightness(0) invert(1);
+            }
+
+            &.img_quickview {
+              margin-bottom: 1.5px;
+              filter: brightness(0) invert(1);
+            }
+
+            &.img_favorite {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product-details {
+    .product-name {
+      padding: 0;
+      font-family: "Varela Round", sans-serif;
+      text-overflow: ellipsis;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      margin: 0 0 3px;
+      padding-bottom: 3px;
+      line-height: 22px;
+      text-transform: capitalize;
+      height: 44px;
+      overflow: hidden;
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      white-space: initial;
+    }
+
+    .product-price {
+      color: #000;
+      line-height: 23px;
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      min-height: 25px;
+    }
+  }
+
+  &:hover {
+    .product-actions {
+      opacity: 1;
+    }
+
+    .product-actions .action-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    -webkit-transform: scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+    opacity: 0;
+  }
+}

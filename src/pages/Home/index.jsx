@@ -10,6 +10,8 @@ import "swiper/swiper-bundle.css";
 
 import "./Home.scss";
 
+import ItemProduct from "../../components/Item-product";
+
 // import img
 import slider_1 from "../../assets/img/slider_1.webp";
 import slider_2 from "../../assets/img/slider_2.webp";
@@ -26,6 +28,13 @@ import quan_dai_nu from "../../assets/img/quan_dai_nu.webp";
 import quan_ngan_nu from "../../assets/img/quan_ngan_nu.webp";
 import quan_jeans_nu from "../../assets/img/quan_jeans_nu.webp";
 import dam from "../../assets/img/dam.webp";
+import Ao_det_kim_Sarah_Top_rr24dk24 from "../../assets/img/Ao_det_kim_Sarah_Top_rr24dk24.webp";
+import Ao_kieu_nu_Lanna_Top_rr24ak60 from "../../assets/img/Ao_kieu_nu_Lanna_Top_rr24ak60.webp";
+import Ao_det_kim_Lina_Polo_rr24dk23 from "../../assets/img/Ao_det_kim_Lina_Polo_rr24dk23.webp";
+import Ao_nu_det_kim_Dessy_Polo_r24dk09 from "../../assets/img/Ao_nu_det_kim_Dessy_Polo_r24dk09.webp";
+import Ao_nu_det_kim_Sassy_Polo_rr24dk07 from "../../assets/img/Ao_nu_det_kim_Sassy_Polo_rr24dk07.webp";
+import Ao_nu_det_kim_Ivy_Polo_rr24dk06 from "../../assets/img/Ao_nu_det_kim_Ivy_Polo_rr24dk06.webp";
+import Ao_nu_det_kim_Jade_Polo_rr24dk05 from "../../assets/img/Ao_nu_det_kim_Jade_Polo_rr24dk05.webp";
 
 const Home = () => {
   const slides = [
@@ -70,6 +79,58 @@ const Home = () => {
     { img: quan_ngan_nu, title: "Quần ngắn nữ", link: "/quan-ngan-nu", count: 5 },
     { img: quan_jeans_nu, title: "Quần jeans nữ", link: "/quan-jeans-nu", count: 9 },
     { img: dam, title: "Đầm", link: "/dam", count: 11 },
+  ];
+
+  const products_feature = [
+    {
+      id: 1,
+      img: Ao_det_kim_Sarah_Top_rr24dk24,
+      name: "Áo dệt kim Sarah Top RR24DK24",
+      price: 250000,
+      alias: "ao-det-kim-sarah-top-rr24dk24",
+    },
+    {
+      id: 2,
+      img: Ao_kieu_nu_Lanna_Top_rr24ak60,
+      name: "Áo kiểu nữ Lanna Top RR24AK60",
+      price: 350000,
+      alias: "ao-kieu-nu-lanna-top-rr24ak60",
+    },
+    {
+      id: 3,
+      img: Ao_det_kim_Lina_Polo_rr24dk23,
+      name: "Áo dệt kim Lina Polo RR24DK23",
+      price: 450000,
+      alias: "ao-det-kim-lina-polo-rr24dk23",
+    },
+    {
+      id: 4,
+      img: Ao_nu_det_kim_Dessy_Polo_r24dk09,
+      name: "Áo nữ dệt kim Dessy Polo R24DK09",
+      price: 550000,
+      alias: "ao-nu-det-kim-dessy-polo-r24dk09",
+    },
+    {
+      id: 5,
+      img: Ao_nu_det_kim_Sassy_Polo_rr24dk07,
+      name: "Áo nữ dệt kim Sassy Polo RR24DK07",
+      price: 650000,
+      alias: "ao-nu-det-kim-sassy-polo-rr24dk07",
+    },
+    {
+      id: 6,
+      img: Ao_nu_det_kim_Ivy_Polo_rr24dk06,
+      name: "Áo nữ dệt kim Ivy Polo RR24DK06",
+      price: 750000,
+      alias: "ao-nu-det-kim-ivy-polo-rr24dk06",
+    },
+    {
+      id: 7,
+      img: Ao_nu_det_kim_Jade_Polo_rr24dk05,
+      name: "Áo nữ dệt kim Jade Polo RR24DK05",
+      price: 850000,
+      alias: "ao-nu-det-kim-jade-polo-rr24dk05",
+    },
   ];
 
   return (
@@ -149,6 +210,36 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </section>
+
+        <section className="product-feature">
+          <div className="container">
+            <div className="product-feature-title">
+              <h2>
+                <Link to="/best-seller" title="Sản phẩm bán chạy">
+                  <span>Sản Phẩm Bán Chạy</span>
+                </Link>
+              </h2>
+            </div>
+            <Swiper
+              modules={[Navigation]}
+              navigation
+              spaceBetween={20}
+              loop={false}
+              breakpoints={{
+                0: { slidesPerView: 1.5 },
+                576: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                992: { slidesPerView: 4 },
+              }}
+            >
+              {products_feature.map((product, index) => (
+                <SwiperSlide key={index}>
+                  <ItemProduct product={product} index={index} />
                 </SwiperSlide>
               ))}
             </Swiper>
