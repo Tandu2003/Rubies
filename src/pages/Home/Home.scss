@@ -259,6 +259,34 @@
   .all-product {
     margin-bottom: 30px;
 
+    &:hover {
+      .swiper-button-prev {
+        left: 5px;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        color: #000;
+
+        &.swiper-button-disabled {
+          opacity: 0.35;
+        }
+      }
+
+      .swiper-button-next {
+        right: 5px;
+        visibility: visible;
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        color: #000;
+
+        &.swiper-button-disabled {
+          opacity: 0.35;
+        }
+      }
+    }
+
     .container {
       width: auto;
       max-width: 1279px;
@@ -322,43 +350,43 @@
 
           .all-product-left {
             width: 25%;
+            position: relative;
+            overflow: hidden;
+            display: block;
+
             a {
-              img {
+              &::before {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                z-index: 2;
+                display: block;
+                content: "";
+                width: 50%;
+                height: 100%;
+                background: -webkit-linear-gradient(
+                  left,
+                  rgba(255, 255, 255, 0) 0%,
+                  rgba(255, 255, 255, 0.3) 100%
+                );
+                background: linear-gradient(
+                  to right,
+                  rgba(255, 255, 255, 0) 0%,
+                  rgba(255, 255, 255, 0.3) 100%
+                );
+                -webkit-transform: skewX(-25deg);
+                transform: skewX(-25deg);
+              }
+
+              &:hover:before {
+                -webkit-animation: shine 1.5s;
+                animation: shine 1.5s;
               }
             }
           }
 
           .all-product-right {
             width: 75%;
-            .swiper-button-prev {
-              left: 5px;
-              visibility: visible;
-              opacity: 1;
-              -webkit-transform: translateY(0);
-              transform: translateY(0);
-              color: #000;
-
-              &.swiper-button-disabled {
-                opacity: 0.35;
-              }
-            }
-
-            .swiper-button-next {
-              right: 5px;
-              visibility: visible;
-              opacity: 1;
-              -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-              color: #000;
-
-              &.swiper-button-disabled {
-                opacity: 0.35;
-              }
-            }
-
-            .swiper-slide {
-              margin-bottom: 8px;
-            }
 
             .content-collection {
               display: grid;
@@ -422,7 +450,7 @@
                       height: 16px;
                       position: absolute;
                       left: 14px;
-                      top: -34px;
+                      top: -35px;
                       transform: rotate(45deg);
                       -webkit-transform: rotate(45deg);
                       -ms-transform: rotate(45deg);
@@ -527,5 +555,17 @@
   100% {
     -webkit-transform: scale(1.2);
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
   }
 }
