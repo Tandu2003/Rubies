@@ -378,6 +378,7 @@
                 transform: skewX(-25deg);
               }
 
+              &:focus:before,
               &:hover:before {
                 -webkit-animation: shine 1.5s;
                 animation: shine 1.5s;
@@ -482,6 +483,26 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .big-seal {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    margin: 30px 0px;
+
+    .big-seal-box {
+      a {
+        text-align: center;
+        display: block;
+        img {
+          width: 100%;
+          max-width: 1920px;
+          background: transparent;
         }
       }
     }

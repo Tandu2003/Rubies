@@ -38,6 +38,7 @@ import Ao_nu_det_kim_Jade_Polo_rr24dk05 from "../../assets/img/Ao_nu_det_kim_Jad
 import img_banner_tab from "../../assets/img/img_banner_tab.webp";
 import icon_1_allpro from "../../assets/img/icon_1_allpro.webp";
 import icon_2_allpro from "../../assets/img/icon_2_allpro.webp";
+import bg_banner_big from "../../assets/img/bg_banner_big.webp";
 
 const Home = () => {
   const slides = [
@@ -308,6 +309,14 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="big-seal">
+          <div className="big-seal-box">
+            <Link to="/bo-suu-tap" title="Banner">
+              <img src={bg_banner_big} alt="bg_banner_big" />
+            </Link>
           </div>
         </section>
       </main>
