@@ -35,6 +35,10 @@ import Ao_nu_det_kim_Dessy_Polo_r24dk09 from "../../assets/img/Ao_nu_det_kim_Des
 import Ao_nu_det_kim_Sassy_Polo_rr24dk07 from "../../assets/img/Ao_nu_det_kim_Sassy_Polo_rr24dk07.webp";
 import Ao_nu_det_kim_Ivy_Polo_rr24dk06 from "../../assets/img/Ao_nu_det_kim_Ivy_Polo_rr24dk06.webp";
 import Ao_nu_det_kim_Jade_Polo_rr24dk05 from "../../assets/img/Ao_nu_det_kim_Jade_Polo_rr24dk05.webp";
+import img_banner_tab from "../../assets/img/img_banner_tab.webp";
+import icon_1_allpro from "../../assets/img/icon_1_allpro.webp";
+import icon_2_allpro from "../../assets/img/icon_2_allpro.webp";
+import bg_banner_big from "../../assets/img/bg_banner_big.webp";
 
 const Home = () => {
   const slides = [
@@ -243,6 +247,76 @@ const Home = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+          </div>
+        </section>
+
+        <section className="all-product">
+          <div className="container">
+            <div className="all-product-box">
+              <div className="all-product-title">
+                <h2>
+                  <Link to="/thoi-trang-nu" title="Sản Phẩm Mới">
+                    <span>Sản Phẩm Mới</span>
+                  </Link>
+                </h2>
+              </div>
+              <div className="all-product-content">
+                <div className="all-product-left">
+                  <Link to="/thoi-trang-nu" title="Banner">
+                    <img src={img_banner_tab} alt="banner" />
+                  </Link>
+                </div>
+                <div className="all-product-right">
+                  <Swiper
+                    modules={[Navigation]}
+                    navigation
+                    spaceBetween={20}
+                    loop={false}
+                    breakpoints={{
+                      0: { slidesPerView: 1.5 },
+                      576: { slidesPerView: 2 },
+                      768: { slidesPerView: 3 },
+                      1024: { slidesPerView: 4 },
+                    }}
+                  >
+                    {products_feature.map((product, index) => (
+                      <SwiperSlide key={index}>
+                        <ItemProduct product={product} />
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                  <div className="content-collection">
+                    <div className="collection-item">
+                      <div className="img_icon current">
+                        <img src={icon_1_allpro} alt="icon_1_allpro" />
+                      </div>
+                      <p className="collection_description">
+                        {" Rubies Rubies "}
+                        <span>389 sản phẩm</span>
+                      </p>
+                    </div>
+
+                    <div className="collection-item">
+                      <div className="img_icon">
+                        <img src={icon_2_allpro} alt="icon_1_allpro" />
+                      </div>
+                      <p className="collection_description">
+                        {" Special Collection "}
+                        <span>389 sản phẩm</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="big-seal">
+          <div className="big-seal-box">
+            <Link to="/bo-suu-tap" title="Banner">
+              <img src={bg_banner_big} alt="bg_banner_big" />
+            </Link>
           </div>
         </section>
       </main>
