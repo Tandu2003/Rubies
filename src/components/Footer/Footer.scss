@@ -21,7 +21,7 @@ footer.footer {
             letter-spacing: 0.5px;
             position: relative;
             font-size: 15px;
-            margin: 0px 0 15px 0;
+            margin: 0 0 10px 0;
             color: #fff;
             text-transform: uppercase;
             font-weight: 600;
@@ -97,9 +97,11 @@ footer.footer {
           ul.footer-top-company,
           ul.footer-top-customer-policy,
           ul.footer-top-info {
+            display: flex;
+            flex-direction: column;
             line-height: 30px;
             padding-left: 0px;
-            margin: 0;
+            margin: 0 0 15px 0;
 
             li.footer-top-company-item,
             li.footer-top-customer-policy-item {
@@ -179,6 +181,108 @@ footer.footer {
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  footer.footer {
+    .footer-top {
+      .container {
+        .footer-top-content {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer.footer {
+    .footer-top {
+      .container {
+        .footer-top-content {
+          grid-template-columns: 1fr;
+
+          .footer-top-content-item:nth-child(2),
+          .footer-top-content-item:nth-child(3) {
+            h4.title-menu {
+              &::after {
+                width: 1.5px;
+                height: 11px;
+                right: 20px;
+                position: absolute;
+                content: "";
+                top: 50%;
+                -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+                transform: translate(-50%, -50%) rotate(-90deg);
+                background-color: currentColor;
+                -webkit-transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+                transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+                transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+                transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
+                  -webkit-transform 0.4s ease-in-out;
+              }
+
+              &::before {
+                width: 11px;
+                height: 1.5px;
+                opacity: 1;
+                position: absolute;
+                content: "";
+                top: 50%;
+                right: 10px;
+                -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+                transform: translate(-50%, -50%) rotate(-90deg);
+                background-color: currentColor;
+                -webkit-transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+                transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+                transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+                transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
+                  -webkit-transform 0.4s ease-in-out;
+              }
+
+              &.active {
+                &::after {
+                  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                  transform: translate(-50%, -50%) rotate(90deg);
+                }
+
+                &::before {
+                  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+                  transform: translate(-50%, -50%) rotate(0deg);
+                }
+              }
+            }
+
+            ul {
+              max-height: 0;
+              overflow: hidden;
+              transition: max-height 0.35s ease;
+
+              &.footer-top-company.active {
+                max-height: 108px;
+              }
+
+              &.footer-top-customer-policy.active {
+                max-height: 162px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  footer.footer {
+    .footer-top {
+      .container {
+        .footer-top-content {
+          padding: 0 10px;
         }
       }
     }
