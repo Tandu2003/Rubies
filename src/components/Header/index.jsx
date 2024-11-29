@@ -14,6 +14,7 @@ import icon_heart from "../../assets/svg/icon-heart.svg";
 import icon_user from "../../assets/svg/icon-user.svg";
 import icon_cart from "../../assets/svg/icon-cart.svg";
 import drop_down from "../../assets/svg/drop-down.svg";
+import menu_icon from "../../assets/svg/menu-icon.svg";
 
 const Header = () => {
   return (
@@ -21,6 +22,14 @@ const Header = () => {
       <header className="header">
         <div className="container">
           <div className="box-header">
+            <div className="header-left-mb">
+              <button className="menu-icon">
+                <img className="img-menu" src={menu_icon} alt="Menu" />
+              </button>
+              <button className="header-mb-search">
+                <img className="img-search" src={icon_search} alt="Tìm kiếm" />
+              </button>
+            </div>
             <div className="header-left">
               <Link to="/" className="logo">
                 <img src={logo} alt="Thời Trang Nữ RUBIES" />
