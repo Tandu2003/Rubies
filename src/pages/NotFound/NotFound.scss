@@ -1,0 +1,34 @@
+.not-found {
+  .container {
+    width: auto;
+    max-width: 1279px;
+
+    .box-not-found {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+
+      .btn-home {
+        display: inline-block;
+        height: 40px;
+        line-height: 39px;
+        padding: 0 20px;
+        text-align: center;
+        white-space: nowrap;
+        outline: none !important;
+        cursor: pointer;
+        border: none;
+        font-weight: 400;
+        border-radius: 0;
+        letter-spacing: 0;
+        box-shadow: none !important;
+        color: #fff;
+        background-color: #040303;
+        border: 1px solid #040303;
+        background: #040303;
+        border-radius: 4px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
