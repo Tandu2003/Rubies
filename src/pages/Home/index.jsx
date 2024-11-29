@@ -10,6 +10,9 @@ import "swiper/swiper-bundle.css";
 
 import "./Home.scss";
 
+// import components
+import Banner from "../../components/Banner";
+
 import ItemProduct from "../../components/Item-product";
 
 // import img
@@ -39,6 +42,7 @@ import img_banner_tab from "../../assets/img/img_banner_tab.webp";
 import icon_1_allpro from "../../assets/img/icon_1_allpro.webp";
 import icon_2_allpro from "../../assets/img/icon_2_allpro.webp";
 import bg_banner_big from "../../assets/img/bg_banner_big.webp";
+import Title from "../../components/Title";
 
 const Home = () => {
   const slides = [
@@ -223,11 +227,7 @@ const Home = () => {
         <section className="product-feature">
           <div className="container">
             <div className="product-feature-title">
-              <h2>
-                <Link to="/best-seller" title="Sản phẩm bán chạy">
-                  <span>Sản Phẩm Bán Chạy</span>
-                </Link>
-              </h2>
+              <Title title="Sản phẩm nổi bật" type="module" link="/best-seller" />
             </div>
             <Swiper
               modules={[Navigation]}
@@ -254,17 +254,11 @@ const Home = () => {
           <div className="container">
             <div className="all-product-box">
               <div className="all-product-title">
-                <h2>
-                  <Link to="/thoi-trang-nu" title="Sản Phẩm Mới">
-                    <span>Sản Phẩm Mới</span>
-                  </Link>
-                </h2>
+                <Title title="Tất cả sản phẩm" type="module" link="/all-product" />
               </div>
               <div className="all-product-content">
                 <div className="all-product-left">
-                  <Link to="/thoi-trang-nu" title="Banner">
-                    <img src={img_banner_tab} alt="banner" />
-                  </Link>
+                  <Banner img={img_banner_tab} title="Banner" />
                 </div>
                 <div className="all-product-right">
                   <Swiper
