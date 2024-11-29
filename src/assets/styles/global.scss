@@ -27,15 +27,37 @@ input[type="submit"]:focus {
   box-shadow: none;
 }
 
-h1, h2, h3, h4, h5, h6, header nav {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header nav {
   font-family: "Varela Round", sans-serif;
   line-height: 1.4;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+a {
   text-decoration: none;
   color: #000;
   background: transparent;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: none;
+  font-weight: inherit;
 }
 
 a:hover {
@@ -51,7 +73,8 @@ p img {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   margin-bottom: 0;
   padding-left: 0;
 }
@@ -71,7 +94,8 @@ table {
   border-spacing: 0;
 }
 
-th, td {
+th,
+td {
   text-align: center;
   padding: 15px;
   border: 1px solid #ebebeb;
@@ -101,14 +125,18 @@ button {
   overflow: visible;
 }
 
-input, textarea, button, select {
+input,
+textarea,
+button,
+select {
   font-size: 1em;
   border-radius: 0;
   max-width: 100%;
   display: block;
 }
 
-input, textarea {
+input,
+textarea {
   border: 1px solid #ebebeb;
   padding: 0 20px;
 }
@@ -152,7 +180,9 @@ fieldset {
 
 select {
   appearance: none;
-  background: #fff url("//bizweb.dktcdn.net/100/462/587/themes/880841/assets/ico-select.png?1731347837015") no-repeat right 10px center;
+  background: #fff
+    url("//bizweb.dktcdn.net/100/462/587/themes/880841/assets/ico-select.png?1731347837015")
+    no-repeat right 10px center;
   padding-right: 28px;
   cursor: pointer;
 }
@@ -174,7 +204,8 @@ label[for] {
   cursor: pointer;
 }
 
-.container, .container-fluid {
+.container,
+.container-fluid {
   padding-left: 10px;
   padding-right: 10px;
   width: 100%;
@@ -184,7 +215,8 @@ label[for] {
 }
 
 @media (min-width: 1200px) {
-  .container, .container-fluid {
+  .container,
+  .container-fluid {
     padding-right: 45px;
     padding-left: 45px;
     max-width: 1349px;
@@ -192,8 +224,76 @@ label[for] {
 }
 
 @media (max-width: 480px) {
-  .container, .container-fluid {
+  .container,
+  .container-fluid {
     padding-left: 7px;
     padding-right: 7px;
+  }
+}
+
+// Swiper slider
+.swiper-button-prev {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: #040303;
+  border: none;
+  outline: none;
+  background: transparent;
+  line-height: 30px;
+  text-align: center;
+  z-index: 2;
+  left: -35px;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(-30px);
+  transform: translateX(-30px);
+
+  &::after {
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+.swiper-button-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: #040303;
+  border: none;
+  outline: none;
+  background: transparent;
+  line-height: 30px;
+  text-align: center;
+  z-index: 2;
+  right: -35px;
+  opacity: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+
+  &::after {
+    font-size: 30px;
+    font-weight: bold;
   }
 }
