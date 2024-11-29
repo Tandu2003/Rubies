@@ -6,8 +6,20 @@ import facebook from "../../assets/svg/facebook.svg";
 import instagram from "../../assets/svg/instagram.svg";
 import youtube from "../../assets/svg/youtube.svg";
 import tiktok from "../../assets/svg/tiktok.svg";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isShowCompany, setIsShowCompany] = useState(false);
+  const [isShowCustomerPolicy, setIsShowCustomerPolicy] = useState(false);
+
+  const handleShowCompany = () => {
+    setIsShowCompany(!isShowCompany);
+  };
+
+  const handleShowCustomerPolicy = () => {
+    setIsShowCustomerPolicy(!isShowCustomerPolicy);
+  };
+
   return (
     <>
       <footer className="footer">
@@ -76,9 +88,9 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <div className="footer-top-content-item">
-                <h4 className="title-menu">Công ty</h4>
-                <ul className="footer-top-company">
+              <div className="footer-top-content-item" onClick={handleShowCompany}>
+                <h4 className={`title-menu${isShowCompany ? " active" : ""}`}>Công ty</h4>
+                <ul className={`footer-top-company${isShowCompany ? " active" : ""}`}>
                   <li className="footer-top-company-item">
                     <Link to="/rubies-rubies" title="RUBIES RUBIES">
                       RUBIES RUBIES
@@ -101,9 +113,13 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div className="footer-top-content-item">
-                <h4 className="title-menu">Chính sách khách hàng</h4>
-                <ul className="footer-top-customer-policy">
+              <div className="footer-top-content-item" onClick={handleShowCustomerPolicy}>
+                <h4 className={`title-menu${isShowCustomerPolicy ? " active" : ""}`}>
+                  Chính sách khách hàng
+                </h4>
+                <ul
+                  className={`footer-top-customer-policy${isShowCustomerPolicy ? " active" : ""}`}
+                >
                   <li className="footer-top-customer-policy-item">
                     <Link to="/chinh-sach-kh-thanh-thiet" title="Chính Sách KH Thân Thiết">
                       Chính Sách KH Thân Thiết
